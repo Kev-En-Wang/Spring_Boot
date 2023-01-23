@@ -1,0 +1,38 @@
+.error { 
+	color:red; 
+	text-align: center;
+	}
+
+img{
+	display:block;
+	margin-left:auto;
+	margin-right: auto;
+	width: 50%;
+	height: 50%;
+}
+
+form{
+	text-align: center;
+	border: blue double;
+}
+
+h1{
+	text-align: center;
+	font-size: 40px;
+}
+
+.secured{
+	text-align: center;
+	font-size: 20px;
+	color: gray;
+}
+
+.secureHead{
+	text-align: center;
+}
+
+.unsecured{
+	text-align: center;
+	font-size: 20px;
+	color: #ff0080;
+}

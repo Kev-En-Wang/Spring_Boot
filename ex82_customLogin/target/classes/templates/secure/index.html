@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" media="all"  
+      href="../../static/css/mycss.css" th:href="@{/css/mycss.css}" />
+<title>Secure Home Page</title>
+</head>
+<body>
+	<div class = "secured">
+
+	<h1 class="secureHead">This is a secured page!</h1>
+	
+	<p><a href="/" th:href="@{/}">Back to home page</a></p>
+	<p><a href="#" th:href="@{/logout}">Logout</a></p>
+	</div>
+	
+</body>
+</html>
