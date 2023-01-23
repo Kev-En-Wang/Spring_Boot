@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Midterm</title>
+</head>
+<body>
+
+	<h1>INSERT AIRPLANE DETAILS HERE</h1>
+	<br>
+	
+	<form method="post" action="" th:action="@{/insertAirplane}" 
+		th:object="${airplane}">
+		<input type="hidden" name="id" th:field="*{id}"/>
+		Airplane: <input type="text" name="airplane" th:field="*{airplane}" /><br>
+		Manufacturer: <input type="text" name="manufacturer" th:field="*{manufacturer}" /><br>
+		Propulsion: <input type="text" name="propulsion" th:field="*{propulsion}" /><br>
+		Date: <input type="date" name="deliveryDate" th:field="*{deliveryDate}" /><br>
+		Time: <input type="time" step="1" name="deliveryTime" th:field="*{deliveryTime}" /><br>
+		<input type="submit" value="ADD!" />
+	</form>
+	
+	<br>
+	<h1>CURRENTLY BOOKED AIRPLANES</h1>
+	<table th:if="${airplaneList != null AND airplaneList!=''}">
+		<tr th:each="s : ${airplaneList}">
+			<td th:text="${s.airplane}"></td>
+			<td th:text="${s.manufacturer}"></td>
+			<td th:text="${s.propulsion}"></td>
+			<td th:text="${s.deliveryDate}"></td>
+			<td th:text="${s.deliveryTime}"></td>
+			<td> <a th:href="@{/editAirplane/}+${s.id}">Edit</a></td>
+			<td> <a th:href="@{/deleteAirplane/}+${s.id}">Delete</a></td>
+		</tr>
+	</table>
+
+</body>
+</html>
