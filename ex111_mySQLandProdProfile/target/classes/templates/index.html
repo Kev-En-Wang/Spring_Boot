@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercise 11.1</title>
+</head>
+
+<h1>This is index.html!</h1>
+<div th:if="${contactList != null and !contactList.empty}">
+<table>
+<tr>
+<th>Contact:</th>
+</tr>
+<tr th:each ="s :${contactList}">
+<td th:text ="${s.firstName}"></td>
+<td th:text ="${s.lastName}"></td>
+<td th:text ="${s.phoneNumber}"></td>
+<td th:text ="${s.birthday}"></td>
+</tr>
+</table>
+</div>
+<br><hr><br>
+
+<form method="post" th:action="@{/insertContact}"
+th:object ="${contact}">
+<input type="hidden" name="id" th:field ="*{id}">
+First Name: <input type="text" name="firstName" th:field ="*{firstName}">
+<br>
+Last Name: <input type="text" name="lastName" th:field ="*{lastName}">
+<br>
+Phone Number: <input type="number" name="phoneNumber" th:field ="*{phoneNumber}">
+<br>
+Birthday: <input type="date" name="birthday" th:field ="*{birthday}">
+<br>
+
+<input type="submit" value="ADD CONTACT!">
+</form>
